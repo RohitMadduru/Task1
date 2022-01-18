@@ -3,7 +3,7 @@ using namespace std;
 
 // Function to Input The Weights of the Items
 
-int getWeights(int weight[], int n){
+float getWeights(float weight[], int n){
     cout << endl;
     cout << "----------------------Weights------------------------" << endl;
     cout << endl;
@@ -17,7 +17,7 @@ int getWeights(int weight[], int n){
 
 // Function to Input The Prices of the Items
 
-int getPrices(int prices[], int n){
+float getPrices(float prices[], int n){
     cout << endl;
     cout << "-----------------------Prices------------------------" << endl;
     cout << endl;
@@ -31,8 +31,9 @@ int getPrices(int prices[], int n){
 
 // Main Logic of the Problem
 
-void getAnswer(int weight[], int prices[] , int n , int basket){
-    int index = 0 , HighestValue = INT_MIN, toAdd = 0;
+void getAnswer(float weight[], float prices[] , int n , float basket){
+    int index = 0;
+    float HighestValue = INT_MIN, toAdd = 0;
     for(int i = 0; i < n; i++){
         if(prices[i] / weight[i] > HighestValue){
             HighestValue = prices[i] / weight[i];
@@ -59,14 +60,14 @@ int main() {
     cout << "-----------------------------------------------------" << endl;
     cout << endl;
     cout << "Enter the Size of the Basket (Kg):" <<" ";
-    int basket;
+    float basket;
     cin >> basket;
     cout << endl;
     int n;
     cout << "Enter the Number of Items To Register:" <<" ";
     cin >> n;
-    int *weight = new int(n);
-    int *prices = new int(n);
+    float *weight = new float(n);
+    float *prices = new float(n);
     getWeights(weight,n);
     getPrices(prices,n);
     getAnswer(weight, prices, n ,basket);
