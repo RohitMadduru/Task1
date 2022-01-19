@@ -1,3 +1,4 @@
+
 #include <iostream>
 using namespace std;
 
@@ -73,5 +74,6 @@ int main() {
     getAnswer(weight, prices, n ,basket);
     cout << endl;
     cout << "-----------------------------------------------------" << endl;
-    
+    delete weight;
+    delete prices;
 }
